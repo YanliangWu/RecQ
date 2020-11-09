@@ -7,6 +7,9 @@ from collections import defaultdict
 import tensorflow as tf
 import gensim.models.word2vec as w2v
 from tool.qmath import sigmoid, cosine
+import os 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 
 def gumbel_softmax(logits, temperature=0.2):
     eps = 1e-20

@@ -1,0 +1,6 @@
+# /bin/zsh
+
+echo "Please follow the instruction in README.md"
+conda install -c conda-forge tensorflow=1.14
+
+
