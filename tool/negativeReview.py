@@ -2,9 +2,9 @@
 ### Input all hyperparams before using the scriipt
 
 FEEDBACK_COLUMN_ID = 2
-NEGATIVE_THRESHOLD = 2
-DATASET_PATH = '../dataset/filmtrust/ratings.txt'
-OUTPUT_PATH =  '../dataset/filmtrust/ratings_n.txt'
+NEGATIVE_THRESHOLD = 3
+DATASET_PATH = '../dataset/douban_trimmed/ratings.txt'
+OUTPUT_PATH =  '../dataset/douban_trimmed/ratings_n.txt'
 
 def generateNegativeDataset(path, feedback_col_id, negative_threshold, output_path):
     output_file = open(output_path, "a")
