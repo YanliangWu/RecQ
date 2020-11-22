@@ -1,5 +1,5 @@
-ratings=../dataset/douban_trimmed/ratings.txt
-social=../dataset/douban/trusts.txt
+ratings=../dataset/douban/ratings.txt
+social=../dataset/FilmTrust/trust.txt
 ratings.setup=-columns 0 1 2 -header
 social.setup=-columns 0 1 -header
 recommender=RSGAN

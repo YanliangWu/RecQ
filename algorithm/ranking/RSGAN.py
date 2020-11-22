@@ -11,7 +11,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 
-def gumbel_softmax(logits, temperature=0.2):
+def gumbel_softmax(logits, temperature=0.1):
     eps = 1e-20
     u = tf.random_uniform(tf.shape(logits), minval=0, maxval=1)
     gumbel_noise = -tf.log(-tf.log(u + eps) + eps)
@@ -331,7 +331,7 @@ class RSGAN(SocialRecommender,DeepRecommender):
 
 
         with tf.variable_scope('discriminator'):
-            self.item_selection = tf.get_variable('item_selection',initializer=tf.constant_initializer(0.01),shape=[self.num_users, self.num_items])
+            self.item_selection = tf.get_variable('item_selection',initializer=tf.constant_initializer(0.001),shape=[self.num_users, self.num_items])
             self.g_params.append(self.item_selection)
             self.d_params = [self.user_embeddings, self.item_embeddings]
 
@@ -418,7 +418,7 @@ class RSGAN(SocialRecommender,DeepRecommender):
         # pretraining
 
         print 'pretraining for generator...'
-        for i in range(30):
+        for i in range(10):
             for num,batch in enumerate(self.next_batch_g()):
                 profiles,uid = batch
                 _,loss = self.sess.run([self.g_pretrain,self.reconstruction],feed_dict={self.X:profiles,self.u_idx:uid})
@@ -426,9 +426,10 @@ class RSGAN(SocialRecommender,DeepRecommender):
 
 
         print 'Training GAN...'
-        for i in range(self.maxIter):
+        for i in range(10):
             for num,batch in enumerate(self.next_batch_pairwise()):
-                user_idx, i_idx, j_idx = batch
+            #for num,batch in range(10):   
+		user_idx, i_idx, j_idx = batch
                 profiles = np.zeros((len(user_idx),self.num_users))
                 for n,u in enumerate(user_idx):
                     u_name = self.data.id2user[u]
