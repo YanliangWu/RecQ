@@ -18,8 +18,6 @@ def gumbel_softmax(logits, temperature=0.2):
     y = tf.log(logits + eps) + gumbel_noise
     return tf.nn.softmax(y / temperature)
 
-
-
 class RSGAN(SocialRecommender,DeepRecommender):
     def __init__(self, conf, trainingSet=None, testSet=None, relation=None, fold='[1]'):
         DeepRecommender.__init__(self, conf=conf, trainingSet=trainingSet, testSet=testSet, fold=fold)
