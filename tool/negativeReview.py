@@ -2,7 +2,7 @@
 ### Input all hyperparams before using the scriipt
 
 FEEDBACK_COLUMN_ID = 2
-NEGATIVE_THRESHOLD = 3
+NEGATIVE_THRESHOLD = 2
 DATASET_PATH = '../dataset/filmtrust/ratings.txt'
 OUTPUT_PATH =  '../dataset/filmtrust/ratings_n.txt'
 
