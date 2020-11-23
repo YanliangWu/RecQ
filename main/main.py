@@ -19,7 +19,7 @@ if __name__ == '__main__':
     print '11. ExpoMF'
     print '-' * 80
 
-    print '***Optimized Generic Recommenders:***'
+    print '***(CSIT5210 Project) Optimized Generic Recommenders:***'
     print '12. BPR-Optimizer'
     print '-' * 80
 
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     print 'a1. CoFactor      a2. CUNE-MF       a3. CUNE-BPR      a4. IF-BPR'
     print '-' * 80
 
-    print '***Optimized Network Embedding based Recommenders:***'
+    print '***(CSIT5210 Project) Optimized Network Embedding based Recommenders:***'
     print 'a5. IF-BPR-Optimizer'
     print '-' * 80
 
@@ -42,7 +42,7 @@ if __name__ == '__main__':
     print 'd11. DHCF         d12. DiffNet'
     print '-' * 80
 
-    print '***Optimized Deep Recommenders:***'
+    print '***(CSIT5210 Project) Optimized Deep Recommenders:***'
     print 'd13. RSGAN Softmax 0.1              d14. RSGAN Minibatch'
     print '-' * 80
 
